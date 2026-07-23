@@ -1,0 +1,10 @@
+=== Pearson Chi-Square Goodness-of-Fit Test: Full Data vs Full JPD ===
+Chi-square statistic: 32.22103845253904
+Degrees of freedom: 25
+p-value: 0.15171552062850233
+Reject H0 (non-compliant)?: False
+Diagnostics: {'n': 100, 'cells_before_pooling': 288, 'cells_with_E_lt_min_expected': 263, 'cells_after_pooling': 26, 'cells_pooled_into_other': 263, 'min_expected_threshold': 1.0, 'alpha': 0.05, 'p_value_available': True, 'note': 'Rare cells (E < min_expected) were greedily pooled into one OTHER bin before computing the statistic. df = cells_after_pooling - 1.'}
+
+=== KL(JPD  Full Generated Data) ===
+KL value: 12.819968465032492
+Diagnostics: {'direction': 'P||Q  =  W-JPD  possible world', 'support_mismatch_P_pos_Q_zero': 227, 'log_base': 2.0, 'smoothing_eps': 1e-12}
