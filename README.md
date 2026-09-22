@@ -61,24 +61,19 @@ Implementation of the Full MarkoViews approach.
 
 The Python program constructs the auxiliary Tuple-Independent probabilistic Database (TID), generates the violation formulas, executes the corresponding provenance queries in PostgreSQL/ProvSQL, retrieves the auxiliary probabilities, and computes the final BID probability.
 
-For each BID tuple with probability \(p\), the corresponding TID probability is
+For each BID tuple with probability `p`, the corresponding TID probability is:
 
-\[
-p' = \frac{p}{1+p}.
-\]
+```text
+p' = p / (1 + p)
+```
 
-The violation event \(U\) represents violations of the exactly-one constraint of the BID blocks.
+The violation event `U` represents violations of the exactly-one constraint of the BID blocks.
 
-To avoid numerical cancellation when \(P_1(U)\) is extremely close to 1, the implementation directly evaluates
+To avoid numerical cancellation when `P1(U)` is extremely close to `1`, the implementation directly evaluates:
 
-\[
-P_0(Q)
-=
-P_1(Q \mid \neg U)
-=
-\frac{P_1(Q \land \neg U)}
-     {P_1(\neg U)}.
-\]
+```text
+P0(Q) = P1(Q | not U) = P1(Q and not U) / P1(not U)
+```
 
 Knowledge compilation is performed through ProvSQL using either `d4` or `dsharp`.
 
